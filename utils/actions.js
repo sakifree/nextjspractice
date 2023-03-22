@@ -1,4 +1,4 @@
-import { connection, Blog } from "./connection";
+import { Blog } from "./connection";
 
 // get all blogs
 export const getBlogs = async () => await Blog.find({})
