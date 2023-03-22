@@ -11,8 +11,8 @@ const Show = ({blog}) => {
     const router = useRouter()
 
     const [form, setForm] = useState({
-        "title": "",
-        "body": ""
+        "title": `${blog.title}`,
+        "body": `${blog.body}`
     })
 
     const handleChange = (event) => {
@@ -47,10 +47,10 @@ const Show = ({blog}) => {
             <form onSubmit={handleUpdate}>
                 <input defaultValue={blog.title} type="text" name="title" onChange={handleChange} />
                 <input defaultValue={blog.body} type="text" name="body" onChange={handleChange} />
-                <input type="submit" value="Update Blog" />
+                <input type="submit" value={`Update ${blog.title}`} />
             </form>
             <form onSubmit={handleDelete}>
-                <input type="submit" value="Delete" /> 
+                <input type="submit" value={`Delete ${blog.title}`} /> 
             </form>
         </div>
         
